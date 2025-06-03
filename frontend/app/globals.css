@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+:root {
+  --background: #ffffff;
+}
+
+.dark {
+  --background: #0a0a0a;
+}
+
+::selection {
+  background-color: #8a7caf;
+  color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@theme {
+  --color-primary: #3333e0;
+  --color-secondary: #8a7caf;
+  --color-third: #f7ebff;
+  --color-last: #67baa6;
+}
+
+.scroll-reveal {
+  margin: 20px 0;
+}
+
+.scroll-reveal-text {
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.word {
+  display: inline-block;
+}
