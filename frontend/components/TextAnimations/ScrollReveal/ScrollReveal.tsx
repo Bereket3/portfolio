@@ -1,7 +1,4 @@
-/*
-  Installed from https://reactbits.dev/ts/tailwind/
-*/
-'use client'
+"use client"
 import React, { useEffect, useRef, useMemo, ReactNode, RefObject } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -40,7 +37,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
     return text.split(/(\s+)/).map((word, index) => {
       if (word.match(/^\s+$/)) return word;
       return (
-        <span className="inline-block" key={index}>
+        <span className="inline-block word" key={index}>
           {word}
         </span>
       );
@@ -91,24 +88,24 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
       }
     );
 
-    if (enableBlur) {
-      gsap.fromTo(
-        wordElements,
-        { filter: `blur(${blurStrength}px)` },
-        {
-          ease: "none",
-          filter: "blur(0px)",
-          stagger: 0.05,
-          scrollTrigger: {
-            trigger: el,
-            scroller,
-            start: "top bottom-=20%",
-            end: wordAnimationEnd,
-            scrub: true,
-          },
-        }
-      );
-    }
+
+    gsap.fromTo(
+      wordElements,
+      { filter: `blur(${blurStrength}px)` },
+      {
+        ease: "none",
+        filter: "blur(0px)",
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: el,
+          scroller,
+          start: "top bottom-=20%",
+          end: wordAnimationEnd,
+          scrub: true,
+        },
+      }
+    );
+
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -124,9 +121,9 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   ]);
 
   return (
-    <h2 ref={containerRef} className={`my-5 ${containerClassName}`}>
+    <h2 ref={containerRef} className={`${containerClassName}`}>
       <p
-        className={`text-[clamp(1.6rem,4vw,3rem)] leading-[1.5] font-semibold ${textClassName}`}
+        className={`text-[clamp(1rem,4vw,2rem)] ${textClassName}`}
       >
         {splitText}
       </p>

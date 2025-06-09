@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react';
 import { navMenu } from '../data/navMenu'; // assuming you have navMenu defined
 import { useTheme } from '@/app/nextThemeProvider';
+import { VscSettingsGear, VscHome, VscAccount, VscArchive } from 'react-icons/vsc';
+import Dock from './dock';
+
 
 const NavBar = () => {
 
@@ -29,14 +32,22 @@ const NavBar = () => {
     setTheme(theme !== 'dark' ? "dark" : "light")
   };
 
+
+  const items = [
+    { icon: <VscHome size={18} />, label: 'Home', onClick: () => alert('Home!') },
+    { icon: <VscArchive size={18} />, label: 'Archive', onClick: () => alert('Archive!') },
+    { icon: <VscAccount size={18} />, label: 'Profile', onClick: () => alert('Profile!') },
+    { icon: <VscSettingsGear size={18} />, label: 'Settings', onClick: () => alert('Settings!') },
+  ];
+
   return (
     <div className='py-4 flex justify-center'>
       <nav
-        className="pointer-events-auto flex fixed w-full items-center justify-between gap-6 dark:text-white rounded-full px-4 py-1 transition-all sm:px-6 sm:pr-4"
+        className="pointer-events-auto flex z-100 fixed dark:bg-black/70 bg-white/70 w-full items-center justify-between gap-6 dark:text-white rounded-full px-4 py-1 transition-all sm:px-6 sm:pr-4"
         style={{
           width: '100%',
           maxWidth: scrolled ? '600px' : '1280px',
-          backgroundColor: 'var(--backdrop, transparent)',
+          // backgroundColor: 'var(--backdrop, transparent)',
           backdropFilter: scrolled ? 'blur(12px)' : 'blur(0px)',
           // outline: scrolled ? '1px solid var(--bg-700)' : 'transparent solid 1px',
           opacity: 1,
@@ -76,7 +87,7 @@ const NavBar = () => {
         <div className="flex items-center justify-center gap-4">
           <button
             onClick={toggleTheme}
-            className="ring-offset-background focus-visible:outline-hidden focus-visible:ring-highlight-primary inline-flex cursor-pointer items-center justify-center whitespace-nowrap text-sm font-semibold focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-11 w-11 border-bg-700 bg-backdrop text-text-primary relative rounded-full border shadow backdrop-blur-md transition-all active:scale-90 sm:h-10 sm:w-10 sm:border-none sm:bg-transparent sm:shadow-none sm:backdrop-blur-none"
+            className="ring-offset-background focus-visible:outline-hidden focus-visible:ring-highlight-primary inline-flex cursor-pointer items-center justify-center whitespace-nowrap text-sm font-semibold focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-11 w-11 border-bg-700 bg-backdrop text-text-primary relative rounded-full border shadow backdrop-blur-md transition-all active:scale-90 sm:h-10 sm:w-10 sm:border-none sm:bg-transparent sm:shadow-none sm:backdrop-blur-none"
           >
             {/* Sun Icon (Light Mode) */}
             <div
@@ -110,6 +121,17 @@ const NavBar = () => {
           </button>
         </div>
       </nav>
+      <div className='md:hidden flex'>
+        <Dock
+          className='text-black dark:text-white z-100'
+          items={items}
+          panelHeight={68}
+          baseItemSize={45}
+          magnification={0}
+        />
+      </div>
+
+
     </div>
   );
 };

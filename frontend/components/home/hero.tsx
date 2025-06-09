@@ -5,10 +5,10 @@ import { SiGmail } from "react-icons/si";
 
 export default function HomeHero() {
   return (
-    <div className="flex flex-col pt-28 place-items-start md:px-10 px-2 gap-4 place-content-start h-fit">
+    <div className="flex flex-col lg:pt-28 pt-10 place-items-start md:px-10 px-2 gap-4 place-content-start h-fit">
       <p className="md:text-7xl md:w-[70%] text-5xl dark:text-white">
         Building intuitive{" "}
-        <span className="bg-gradient-to-r from-primary via-green-500 to-last bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-customePrimary via-green-500 to-last bg-clip-text text-transparent">
           systems where design
         </span>{" "}
         meets function
