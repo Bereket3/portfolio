@@ -16,7 +16,7 @@ export default function Projects() {
     <h2 className="dark:text-gray-400 text-black/90 pl-8 font-extralight">
       Here&apos;s a curated selection showcasing my expertise and the achieved results.
     </h2>
-    <div className="grid md:grid-cols-2 grid-cols-1 place-items-center gap-4 pt-14 md:px-10 px-2">
+    <div className="grid md:grid-cols-2 grid-cols-1 place-items-center gap-4 md:pt-14 md:px-10 px-2">
 
       {projects.map((value, index) => {
         return <ProjectItemsCard

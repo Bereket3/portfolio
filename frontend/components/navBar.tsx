@@ -47,9 +47,8 @@ const NavBar = () => {
         style={{
           width: '100%',
           maxWidth: scrolled ? '600px' : '1280px',
-          // backgroundColor: 'var(--backdrop, transparent)',
           backdropFilter: scrolled ? 'blur(12px)' : 'blur(0px)',
-          // outline: scrolled ? '1px solid var(--bg-700)' : 'transparent solid 1px',
+          outline: scrolled ? '1px solid var(--bg-800)' : 'transparent solid 1px',
           opacity: 1,
           transform: 'none',
           transition: ''
