@@ -1,11 +1,13 @@
-
 [build]
-  command = "pnpm run export"
-  publish = "out"
-
-
+  command = "pnpm run build"
+  # DO NOT set publish to "."; Netlify handles it for Next.js
 
 [[plugins]]
   package = "netlify-plugin-bundle-env"
   [plugins.inputs]
-    source = "."  # or the correct directory where your env vars should be bundled
+    directories = ["./"]
+    include = ["NEXT_PUBLIC_*"]
+    mask = true
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
