@@ -1,0 +1,11 @@
+
+[build]
+  command = "pnpm run export"
+  publish = "out"
+
+
+
+[[plugins]]
+  package = "netlify-plugin-bundle-env"
+  [plugins.inputs]
+    source = "."  # or the correct directory where your env vars should be bundled
