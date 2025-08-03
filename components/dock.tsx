@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -94,7 +93,12 @@ function DockItem({
       aria-haspopup="true"
     >
       {Children.map(children, (child) =>
-        cloneElement(child as React.ReactElement, { isHovered })
+        cloneElement(
+          child as React.ReactElement<{ isHovered: MotionValue<number> }>,
+          {
+            isHovered,
+          }
+        )
       )}
     </motion.div>
   );

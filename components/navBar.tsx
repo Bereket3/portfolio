@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react';
-import { navMenu } from '../data/navMenu'; // assuming you have navMenu defined
+import { navMenu } from '../data/navMenu'; 
 import { useTheme } from '@/app/nextThemeProvider';
 import { VscSettingsGear, VscHome, VscAccount, VscArchive } from 'react-icons/vsc';
 import Dock from './dock';
