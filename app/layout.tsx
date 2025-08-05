@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./nextThemeProvider";
 
 const roboto = Sora({
   weight: ["400", "500", "300", "600", "700", "800"],
@@ -19,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} antialiased`}>{children}</body>
+      <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+        <body className={`${roboto.className} antialiased`}>{children}</body>
+      </ThemeProvider>
     </html>
   );
 }

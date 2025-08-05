@@ -1,9 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react';
-import { navMenu } from '../data/navMenu'; 
+import { navMenu } from '../data/navMenu';
 import { useTheme } from '@/app/nextThemeProvider';
-import { VscSettingsGear, VscHome, VscAccount, VscArchive } from 'react-icons/vsc';
+import { VscSettingsGear, VscHome, VscAccount, VscGithubProject } from 'react-icons/vsc';
+import { IoIosContact } from "react-icons/io";
 import Dock from './dock';
 
 
@@ -35,33 +36,33 @@ const NavBar = () => {
 
   const items = [
     { icon: <VscHome size={18} />, label: 'Home', onClick: () => alert('Home!') },
-    { icon: <VscArchive size={18} />, label: 'Archive', onClick: () => alert('Archive!') },
-    { icon: <VscAccount size={18} />, label: 'Profile', onClick: () => alert('Profile!') },
-    { icon: <VscSettingsGear size={18} />, label: 'Settings', onClick: () => alert('Settings!') },
+    { icon: <VscGithubProject size={18} />, label: 'Project', onClick: () => alert('Archive!') },
+    { icon: <VscAccount size={18} />, label: 'About Me', onClick: () => alert('Profile!') },
+    { icon: <IoIosContact size={18} />, label: 'Contact', onClick: () => alert('Settings!') },
   ];
 
   return (
-    <div className='py-4 flex justify-center'>
+    <div className='flex justify-center'>
       <nav
-        className="pointer-events-auto flex z-100 fixed dark:bg-black/70 bg-white/70 w-full items-center justify-between gap-6 dark:text-white rounded-full px-4 py-1 transition-all sm:px-6 sm:pr-4"
+        className={`pointer-events-auto top-4  flex z-100 fixed dark:bg-black/70 bg-white/70 w-full items-center justify-between gap-6 dark:text-white rounded-full px-4 py-1 transition-all sm:px-6 sm:pr-4 ${scrolled ? "" : "bg-none"}`}
         style={{
           width: '100%',
           maxWidth: scrolled ? '600px' : '1280px',
           backdropFilter: scrolled ? 'blur(12px)' : 'blur(0px)',
-          outline: scrolled ? '1px solid var(--bg-800)' : 'transparent solid 1px',
+          // outline: scrolled ? '1px solid var(--bg-800)' : 'transparent solid 1px',
           opacity: 1,
           transform: 'none',
           transition: ''
         }}
       >
-        <a className="font-clash-display text-2xl font-medium sm:text-xl" href="/">
+        <a className="font-clash-display text-2xl font-medium sm:text-xl dark:text-zinc-100 dark:drop-shadow-[0_0_8px_#e5e7eb]" href="/">
           BW
         </a>
 
         {/* Desktop Nav Links */}
         <ul className="text-text-secondary hidden gap-6 text-sm sm:flex">
           {navMenu.map((nav) => (
-            <li key={nav.id} className="group relative">
+            <li key={nav.id} className="group relative dark:text-zinc-100 dark:drop-shadow-[0_0_8px_#e5e7eb]">
               <a className={true ? 'active-link' : ''} href={nav.href}>
                 <span className="relative inline-flex overflow-hidden h-auto">
                   {/* Front Text */}
@@ -83,7 +84,7 @@ const NavBar = () => {
         </ul>
 
         {/* Theme Toggle Button */}
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex items-center justify-center gap-4 dark:text-zinc-100 dark:drop-shadow-[0_0_8px_#e5e7eb]">
           <button
             onClick={toggleTheme}
             className="ring-offset-background focus-visible:outline-hidden focus-visible:ring-highlight-primary inline-flex cursor-pointer items-center justify-center whitespace-nowrap text-sm font-semibold focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-11 w-11 border-bg-700 bg-backdrop text-text-primary relative rounded-full border shadow backdrop-blur-md transition-all active:scale-90 sm:h-10 sm:w-10 sm:border-none sm:bg-transparent sm:shadow-none sm:backdrop-blur-none"
@@ -129,8 +130,6 @@ const NavBar = () => {
           magnification={0}
         />
       </div>
-
-
     </div>
   );
 };

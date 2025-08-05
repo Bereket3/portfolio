@@ -146,7 +146,7 @@ type DockIconProps = {
 
 function DockIcon({ children, className = "" }: DockIconProps) {
   return (
-    <div className={`flex items-center justify-center ${className}`}>
+    <div className={`flex items-center dark:drop-shadow-[0_0_8px_#e5e7eb] justify-center ${className}`}>
       {children}
     </div>
   );
