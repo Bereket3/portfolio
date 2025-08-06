@@ -16,7 +16,7 @@ export default function HomeHero() {
           Available for work!
         </span>
       </div>
-      <p className="md:text-7xl max-w-4xl text-4xl dark:text-zinc-300 text-center font-bold">
+      <p className="md:text-7xl dark:drop-shadow-[0_1px_4px_#30af5b]  max-w-4xl text-4xl dark:text-zinc-300 text-center font-bold">
         Building intuitive{" "}
         <span className="bg-gradient-to-r from-customePrimary via-green-500 to-last bg-clip-text text-transparent font-bold">
           systems where design
@@ -31,10 +31,10 @@ export default function HomeHero() {
       </div>
 
 
-      <div className="flex animate-delay-300 animate-fade-up items-center justify-center gap-6">
+      <div className="flex dark:drop-shadow-[0_0_8px_#30af5b] animate-delay-300 animate-fade-up items-center justify-center gap-6">
         <Link
-          download="EmranKamilResume.pdf"
-          href="/EmranKamilResume.pdf"
+          download="Bereket_worku.pdf"
+          href="/Bereket_worku.pdf"
           rel="noopener noreferrer"
           target="_blank"
           className="mt-8 rounded-2xl bg-darkCust text-black dark:bg-custPrim/10 dark:text-white px-4 py-2  flex items-center justify-center gap-1.5"
@@ -60,7 +60,7 @@ export default function HomeHero() {
           Get resume
         </Link>
         <Link
-          href="https://www.linkedin.com/in/emran-kamil"
+          href="https://www.linkedin.com/in/bereket-worku-5a5927275/"
           rel="noopener noreferrer"
           target="_blank"
           className="mt-8 bg-customeGreenDark text-zinc-100 border-none px-4 py-2 rounded-2xl flex items-center justify-center gap-1.5 shadow-sm"

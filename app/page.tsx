@@ -6,6 +6,8 @@ import Projects from "@/components/home/projects";
 import AnimatedContent from '@/components/animated-components'
 import Squares from "@/components/Backgrounds/Squares/Squares";
 import { useTheme } from "./nextThemeProvider";
+import ExperienceTimeline from "@/components/home/experience";
+import TechScroller from "@/components/logoWall";
 
 export default function Home() {
   const { theme } = useTheme()
@@ -23,7 +25,7 @@ export default function Home() {
         speed={0.2}
         squareSize={40}
         direction="diagonal"
-        borderColor={theme === "dark" ? "#111" : "#eee"}
+        borderColor={theme === "dark" ? "#111" : "#fee"}
       />
 
       <div className="flex flex-col gap-5 items-center justify-center content-center">
@@ -41,8 +43,10 @@ export default function Home() {
         >
           <HomeHero />
         </AnimatedContent>
+        <TechScroller />
         <WhatDoIDo />
         <Projects />
+        <ExperienceTimeline />
       </div>
     </div>
 

@@ -41,7 +41,7 @@
 }
 
 ::selection {
-  background-color: #8a7caf;
+  background-color: #30af5b;
   color: white;
 }
 
@@ -182,5 +182,54 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+
+.shiny-text {
+  color: #b5b5b5a4;
+  /* Adjust this color to change intensity/style */
+  background: linear-gradient(120deg,
+      rgba(48, 175, 91, 1) 40%,
+      rgba(50, 190, 2, 1) 50%,
+      rgba(103, 186, 1, 1) 60%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: -100%;
+  }
+}
+
+.shiny-text.disabled {
+  animation: none;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 60s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .animate-scroll {
+    animation-duration: 50s;
   }
 }

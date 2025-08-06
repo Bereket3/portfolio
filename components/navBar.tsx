@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { navMenu } from '../data/navMenu';
 import { useTheme } from '@/app/nextThemeProvider';
-import { VscSettingsGear, VscHome, VscAccount, VscGithubProject } from 'react-icons/vsc';
+import { VscHome, VscAccount, VscGithubProject } from 'react-icons/vsc';
 import { IoIosContact } from "react-icons/io";
 import Dock from './dock';
 
