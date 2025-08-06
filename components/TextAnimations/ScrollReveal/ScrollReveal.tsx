@@ -55,7 +55,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 
     gsap.fromTo(
       el,
-      { transformOrigin: "0% 50%", rotate: baseRotation },
+      { transformOrigin: "0% 70%", rotate: baseRotation },
       {
         ease: "none",
         rotate: 0,
@@ -81,7 +81,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
         scrollTrigger: {
           trigger: el,
           scroller,
-          start: "top bottom-=20%",
+          start: "top bottom-=50%",
           end: wordAnimationEnd,
           scrub: true,
         },
@@ -99,7 +99,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
         scrollTrigger: {
           trigger: el,
           scroller,
-          start: "top bottom-=20%",
+          start: "top bottom-=50%",
           end: wordAnimationEnd,
           scrub: true,
         },
