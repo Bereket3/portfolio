@@ -10,7 +10,11 @@ import peojectImage from "@/public/assets/aora.webp"
 
 
 export default function ProjectItemsCard(
-  { projectTitle, projectDetails, projectImage, techStack }:
+  { projectTitle,
+    projectDetails,
+    projectImage,
+    techStack
+  }:
     {
       projectTitle: string,
       projectDetails: string,
@@ -31,7 +35,7 @@ export default function ProjectItemsCard(
           src={peojectImage}
         />
       </CardContent>
-      <CardFooter className="dark:text-white flex flex-col items-start text-start md:m-2 gap-2">
+      <CardFooter className="dark:text-white flex flex-col items-start text-start m-3 md:m-2 gap-2">
         <div>
           <div className="text-lg font-bold">
             {projectTitle}
@@ -45,7 +49,6 @@ export default function ProjectItemsCard(
           {techStack.map((value, index) => {
             return <div key={index} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-darkCust dark:bg-custPrim/10 dark:text-white text-primary animate-in fade-in slide-in-from-bottom-4 duration-700 text-xs">{value}</div>
           })}
-
         </div>
       </CardFooter>
     </Card >

@@ -1,9 +1,12 @@
-export interface ExperienceEntryType {
-  company: string;
-  companyUrl: string;
+import { ReactNode } from "react";
+
+export type ExperienceEntryType = {
   date: string;
   role: string;
-  description: string;
-  skills: string[];
+  companyUrl: string;
+  company: string;
+  icon: ReactNode;
+  description?: string;
   roles: string[];
-}
+  skills: string[];
+};

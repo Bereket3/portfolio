@@ -8,6 +8,7 @@ import Squares from "@/components/Backgrounds/Squares/Squares";
 import { useTheme } from "./nextThemeProvider";
 import ExperienceTimeline from "@/components/home/experience";
 import TechScroller from "@/components/logoWall";
+import CandyComponent from "@/components/home/candyComponent";
 
 export default function Home() {
   const { theme } = useTheme()
@@ -47,6 +48,8 @@ export default function Home() {
         <WhatDoIDo />
         <Projects />
         <ExperienceTimeline />
+        <CandyComponent />
+
       </div>
     </div>
 

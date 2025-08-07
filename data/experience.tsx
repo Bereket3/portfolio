@@ -1,11 +1,12 @@
 import { ExperienceEntryType } from "@/types/experience";
-
+import { Briefcase, Rocket, Settings, Palette } from "lucide-react"
 export const experienceData: ExperienceEntryType[] = [
   {
     date: "May 2025 - Present",
     role: "Full-stack Developer",
     companyUrl: "https://www.pragmaticdlt.com/",
     company: "Pragmatic DLT",
+    icon: <Briefcase className="w-4 h-4 text-primary" />,
     description: "",
     roles: [
       "Lead full product cycles—from requirement gathering to deployment—ensuring quality and efficiency.",
@@ -26,6 +27,7 @@ export const experienceData: ExperienceEntryType[] = [
     role: "Lead Software Engineer",
     companyUrl: "https://beta.wavic.pro/",
     company: "Wavic",
+    icon: <Rocket className="w-4 h-4 text-primary" />,
     description: "",
     roles: [
       "Built and optimized client side and backend services, ensuring scalability and efficiency.",
@@ -40,6 +42,7 @@ export const experienceData: ExperienceEntryType[] = [
     role: "Fullstack Developer",
     companyUrl: "https://www.4klabs.tech/",
     company: "4K-Labs",
+    icon: <Settings className="w-4 h-4 text-primary" />,
     description:
       "4K Labs is a Research and development laboratory, where there are teams of curious innovators from different disciplines of study, working together in the focus area of AI, Robotics, embedded systems, tiny ML, and software development.",
     roles: [
@@ -55,6 +58,7 @@ export const experienceData: ExperienceEntryType[] = [
     role: "Backend Developer",
     companyUrl: "https://a2sv.org",
     company: "A2SV",
+    icon: <Palette className="w-4 h-4 text-primary" />,
     description:
       "A2SV | Africa to Silicon Valley, backed by Google, trains top-tier software engineering talent, equipping them with world-class skills and connecting them to global opportunities at leading tech companies like Google, Palantir, Databricks, Bloomberg, and Meta.",
     roles: [
@@ -71,6 +75,7 @@ export const experienceData: ExperienceEntryType[] = [
     role: "Software Engineer Trainee",
     companyUrl: "https://a2sv.org",
     company: "A2SV",
+    icon: <Palette className="w-4 h-4 text-primary" />,
     description: "",
     roles: [
       "Completed 1,000+ hours of rigorous training in advanced Data Structures, Algorithms, and problem-solving through A2SV's Education Program.",

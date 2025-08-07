@@ -10,6 +10,9 @@ import Link from "next/link";
 import ShinyText from "../TextAnimations/ShinyText/ShinyText";
 // import ScrollStack, { ScrollStackItem } from '../Components/ScrollStack/ScrollStack'
 
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "../ui/accordion";
+
+
 const colors = [
   "bg-red-400",
   "bg-blue-400",
@@ -107,22 +110,95 @@ const ExperienceEntry: React.FC<{
 const ExperienceTimeline: React.FC = () => {
   return (
     <div className="mx-auto relative w-full max-w-screen-xl md:px-20 flex flex-col items-left justify-center">
-      <h1 className="flex flex-row items-center gap-1">
-        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" className='dark:text-last text-green-500' viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path></svg>
-        <ShinyText text="Work History" speed={5} disabled={false} className='text-lg font-extralight text-green-500 dark:text-last' />
-      </h1>
-      <h1 className="text-3xl dark:text-white">
-        Experience
-      </h1>
-      <p className="dark:text-white/50 font-extralight">I have worked with some of the most innovative industry leaders to help build their top-notch products.</p>
-      <div className="">
-        {experienceData.map((entry, index) => (
-          <ExperienceEntry
-            key={index}
-            entry={entry}
-            isLast={index === experienceData.length - 1}
-          />
-        ))}
+      <div className=" grid md:grid-cols-2 gap-4 place-content-center place-items-center">
+        <div className="md:pl-8 pl-2 ">
+          <h1 className="flex flex-row items-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="15"
+              height="15"
+              className='dark:text-last text-green-500'
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z">
+              </path>
+            </svg>
+            <ShinyText
+              text="Work History"
+              speed={5}
+              disabled={false}
+              className='text-lg font-extralight text-green-500 dark:drop-shadow-[0_1px_4px_#30af5b]  dark:text-last'
+            />
+          </h1>
+          <h1 className="text-4xl dark:text-white dark:drop-shadow-[0_1px_4px_#e5e7eb]">
+            Experience
+          </h1>
+          <p className="dark:text-white/50 font-extralight">
+            I have worked with some of the most innovative industry leaders to help build their top-notch products.
+          </p>
+        </div>
+        <div>
+          <Accordion type="single" collapsible className="w-full max-w-2xl px-2">
+            {experienceData.map((item, index) => (
+              <AccordionItem value={`item-${index}`} key={index}>
+                <AccordionTrigger className="flex flex-row items-center content-center justify-between">
+                  <div className="flex items-center md:gap-3 gap-2">
+                    <div className="bg-muted p-2 rounded-full">
+                      {item.icon}
+                    </div>
+                    <div className="text-left dark:text-white">
+                      <p className="font-medium">{item.role}</p>
+                      <p className="text-muted-foreground text-sm">@{item.company}</p>
+                    </div>
+                  </div>
+                  <p className="md:text-sm text-xs text-muted-foreground ">{item.date}</p>
+                </AccordionTrigger>
+                <AccordionContent className="pl-4">
+                  <div className="text-muted-foreground md:text-sm text-xs mt-2">
+                    {item.roles.map((role, index) => (
+                      <div key={index} className="flex pt-1">
+                        <div className="pt-1">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="lucide-icon lucide lucide-chevron-right"
+                          >
+                            <path d="m9 18 6-6-6-6"></path>
+                          </svg>
+                        </div>{" "}
+                        {role}
+                      </div>
+                    ))}
+
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {item.skills.map((skill, index) => (
+                        <Badge variant="secondary" className="dark:bg-custPrim/20 dark:text-white" key={index}>
+                          <div
+                            className={`${getRandomColor()} w-2 h-2 mr-2 rounded-full`}
+                          />
+                          <span className="font-mono">{skill}</span>
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
     </div>
   );
