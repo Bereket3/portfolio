@@ -16,7 +16,7 @@ export async function POST(req: Request) {
   });
 
   try {
-    _ = await transporter.sendMail({
+    await transporter.sendMail({
       from: '"sender@emran.me" <sender@emran.me>',
       to: "emranhi001@gmail.com",
       subject: subject,
