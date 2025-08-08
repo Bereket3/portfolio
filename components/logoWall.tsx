@@ -30,7 +30,7 @@ export default function TechScroller() {
 
       </div>
       {/* Scrolling container */}
-      <div className="flex animate-scroll hover:[animation-play-state:paused] gap-8 md:gap-20 w-max">
+      <div className="flex animate-scroll hover:[animation-play-state:paused] gap-8 md:gap-10 w-max">
         {techList.map((tech, index) => (
           <div
             key={index}

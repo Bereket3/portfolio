@@ -4,11 +4,12 @@ import nodemailer from "nodemailer"
 
 export async function POST(req: Request) {
   const { email, subject, message } = await req.json();
+  console.log(process.env.NODEMAILER_USER, process.env.SMTP_SERVICE, process.env.NODEMAILER_PASS)
+
   const transporter = nodemailer.createTransport({
-    // host: "smtp.seznam.cz",
-    // port: 465,
-    // secure: true,
-    service: process.env.SMTP_SERVICE,
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.NODEMAILER_USER,
       pass: process.env.NODEMAILER_PASS,
@@ -17,8 +18,8 @@ export async function POST(req: Request) {
 
   try {
     await transporter.sendMail({
-      from: '"sender@emran.me" <sender@emran.me>',
-      to: "emranhi001@gmail.com",
+      from: '"sender@bereket.me" <sender@bereket.me>',
+      to: "workumyfather@gmail.com",
       subject: subject,
       replyTo: email,
       html: `
