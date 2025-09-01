@@ -2,11 +2,6 @@
 
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
-import {
-
-  DrawerClose,
-
-} from "@/components/ui/drawer";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import {
@@ -22,6 +17,7 @@ import { Textarea } from "../ui/textarea";
 import { toast } from "sonner";
 import { Card, CardTitle, CardDescription, CardContent, CardHeader } from "../ui/card";
 import ShinyText from "../TextAnimations/ShinyText/ShinyText";
+import { useState } from "react";
 
 const formSchema = z.object({
   email: z
@@ -55,6 +51,7 @@ const formSchema = z.object({
 });
 
 export function ContactForm() {
+  const [loading, setLoading] = useState<boolean>(false)
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -66,6 +63,7 @@ export function ContactForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    setLoading(true)
     try {
       if (values.honeypot) {
         return;
@@ -95,6 +93,8 @@ export function ContactForm() {
       toast.error("Failed to send the form. Please try again.", {
         duration: 5000,
       });
+    } finally {
+      setLoading(true)
     }
   }
   return (
@@ -202,7 +202,7 @@ export function ContactForm() {
                   )}
                 />
                 <div className="flex justify-center gap-6">
-                  <Button type="submit" className="w-full bg-customeGreenDark hover:bg-green-700">
+                  <Button type="submit" className="w-full bg-customeGreenDark hover:bg-green-700" disabled={loading}>
                     Submit
                   </Button>
                 </div>

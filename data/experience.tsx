@@ -1,11 +1,11 @@
 import { ExperienceEntryType } from "@/types/experience";
-import { Briefcase, Rocket, Settings, Palette } from "lucide-react"
+import { Briefcase, Rocket, Settings, Palette } from "lucide-react";
 export const experienceData: ExperienceEntryType[] = [
   {
     date: "May 2025 - Present",
     role: "Full-stack Developer",
-    companyUrl: "https://www.pragmaticdlt.com/",
-    company: "Pragmatic DLT",
+    companyUrl: "https://www.torobingo.com/",
+    company: "Toro Bingo",
     icon: <Briefcase className="w-4 h-4 text-primary" />,
     description: "",
     roles: [
@@ -15,44 +15,44 @@ export const experienceData: ExperienceEntryType[] = [
     ],
     skills: [
       "Typescript",
-      "Next.js",
-      "Better auth",
-      "Next auth",
+      "Next.Js",
+      "Nest.Js",
+      "Web Socket",
       "Docker",
-      "DigitalOcean",
+      "Lite Server",
     ],
   },
   {
-    date: "Aug 2024 - Feb 2025",
+    date: "Jul 2024 - Sept 2025",
     role: "Lead Software Engineer",
-    companyUrl: "https://beta.wavic.pro/",
-    company: "Wavic",
+    companyUrl: "https://highclasscarrental.com/",
+    company: "High Class Car Rental",
     icon: <Rocket className="w-4 h-4 text-primary" />,
     description: "",
     roles: [
-      "Built and optimized client side and backend services, ensuring scalability and efficiency.",
+      "Guided development of a multiservice platform for High Class Car rentals service, delivering 20% ahead of schedule and 15% under budget.",
       "I utilize Docker to ensure consistent environments.",
       "I participate in code reviews, offering feedback to maintain high code standards.",
-      "Integrate Stripe for seamless and secure subscription payments.",
+      "Streamlined the booking process by 30%, driving a 15% increase in customer conversions.",
     ],
-    skills: ["Nest.js", "kafka", "Next.js", "AWS", "Docker", "Microservice"],
+    skills: ["Django", "Python", "Next.js"],
   },
-  {
-    date: "Sep 2022 - Nov 2024",
-    role: "Fullstack Developer",
-    companyUrl: "https://www.4klabs.tech/",
-    company: "4K-Labs",
-    icon: <Settings className="w-4 h-4 text-primary" />,
-    description:
-      "4K Labs is a Research and development laboratory, where there are teams of curious innovators from different disciplines of study, working together in the focus area of AI, Robotics, embedded systems, tiny ML, and software development.",
-    roles: [
-      "Built, deployed, secured and maintained multiple web apps",
-      "Played an active leadership role as a team lead, guiding and supporting new developers and interns",
-      "Improved development practices, introducing automated testing and debugging.",
-    ],
-
-    skills: ["Next.JS", "Django", "kafka", "NestJs", "Supabase", "AWS"],
-  },
+  /* { */
+  /*   date: "Sep 2022 - Nov 2024", */
+  /*   role: "Full Stack Developer", */
+  /*   companyUrl: "https://www.4klabs.tech/", */
+  /*   company: "4K-Labs", */
+  /*   icon: <Settings className="w-4 h-4 text-primary" />, */
+  /*   description: */
+  /*     "4K Labs is a Research and development laboratory, where there are teams of curious innovators from different disciplines of study, working together in the focus area of AI, Robotics, embedded systems, tiny ML, and software development.", */
+  /*   roles: [ */
+  /*     "Built, deployed, secured and maintained multiple web apps", */
+  /*     "Played an active leadership role as a team lead, guiding and supporting new developers and interns", */
+  /*     "Improved development practices, introducing automated testing and debugging.", */
+  /*   ], */
+  /**/
+  /*   skills: ["Next.JS", "Django", "kafka", "NestJs", "Supabase", "AWS"], */
+  /* }, */
   {
     date: "Jul 2024 - Oct 2024",
     role: "Backend Developer",
